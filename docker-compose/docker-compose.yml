@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  dev:
+    build:
+      context: ../Dockerfile
+      dockerfile: Dockerfile
+    image: stable-diffusion:1.1.1
+    container_name: stable-diffusion-webui
+    volumes:
+      - ../stable-diffusion-webui:/stable-diffusion-webui
+    working_dir: /stable-diffusion-webui
+    tty: true
+    ports:
+      - "7860:7860"
+    entrypoint: sh -c "python launch.py --skip-version-check --listen"
+
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
