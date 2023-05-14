@@ -13,7 +13,7 @@ services:
     tty: true
     ports:
       - "7860:7860"
-    entrypoint: sh -c "python launch.py --skip-version-check --listen"
+    entrypoint: sh -c "python launch.py --skip-version-check --listen --enable-insecure-extension-access"
 
     deploy:
       resources:
