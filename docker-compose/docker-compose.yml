@@ -3,12 +3,15 @@ version: '3'
 services:
   dev:
     build:
-      context: ../Dockerfile
-      dockerfile: Dockerfile
-    image: stable-diffusion:1.1.1
+      context: ..
+      dockerfile: Dockerfile/Dockerfile
+    image: stable-diffusion:1.2.0
     container_name: stable-diffusion-webui
     volumes:
-      - ../stable-diffusion-webui:/stable-diffusion-webui
+      - ../models/embeddings:/stable-diffusion-webui/embeddings
+      - ../models/Lora:/stable-diffusion-webui/models/Lora
+      - ../models/control-net:/stable-diffusion-webui/extensions/sd-webui-controlnet/models
+      - ../outputs:/stable-diffusion-webui/outputs
     working_dir: /stable-diffusion-webui
     tty: true
     ports:
