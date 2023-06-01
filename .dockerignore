@@ -1,5 +1,2 @@
-models/control-net
-models/embeddings
-models/Lora
-
+models
 outputs

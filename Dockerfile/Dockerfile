@@ -13,8 +13,8 @@ RUN apt-get update && apt-get install ffmpeg libsm6 libxext6  -y
 
 RUN git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui.git -b v1.3.0
 
-COPY models/stable-diffusion/*.safetensors /stable-diffusion-webui/models/Stable-diffusion
-COPY models/vae/*.safetensors /stable-diffusion-webui/models/VAE
+RUN wget -P /stable-diffusion-webui/models/Stable-diffusion https://huggingface.co/WarriorMama777/OrangeMixs/resolve/main/Models/AbyssOrangeMix3/AOM3A1_orangemixs.safetensors
+RUN wget -P /stable-diffusion-webui/models/VAE https://huggingface.co/stabilityai/sd-vae-ft-mse-original/resolve/main/vae-ft-mse-840000-ema-pruned.safetensors
 
 WORKDIR stable-diffusion-webui
 RUN python launch.py --skip-torch-cuda-test --exit
