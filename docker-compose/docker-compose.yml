@@ -10,7 +10,6 @@ services:
     volumes:
       - ../models/embeddings:/stable-diffusion-webui/embeddings
       - ../models/Lora:/stable-diffusion-webui/models/Lora
-      - ../models/control-net:/stable-diffusion-webui/extensions/sd-webui-controlnet/models
       - ../outputs:/stable-diffusion-webui/outputs
     working_dir: /stable-diffusion-webui
     tty: true
