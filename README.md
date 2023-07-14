@@ -13,7 +13,6 @@
     │   ├── Dockerfile
     │   └── requirements.txt
     ├── models
-    │   ├── control-net
     │   ├── embeddings
     │   └── Lora
     ├── outputs
