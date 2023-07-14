@@ -5,7 +5,7 @@ services:
     build:
       context: ..
       dockerfile: Dockerfile/Dockerfile
-    image: stable-diffusion-webui:1.4.0
+    image: stable-diffusion-webui:1.4.1
     container_name: stable-diffusion-webui
     volumes:
       - ../models/embeddings:/stable-diffusion-webui/embeddings
@@ -15,7 +15,7 @@ services:
     tty: true
     ports:
       - "7860:7860"
-    entrypoint: sh -c "python launch.py --skip-version-check --listen --enable-insecure-extension-access"
+    entrypoint: sh -c "python launch.py --listen --enable-insecure-extension-access"
 
     deploy:
       resources:
