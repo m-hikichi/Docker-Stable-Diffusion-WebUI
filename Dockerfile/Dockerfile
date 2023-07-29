@@ -20,7 +20,7 @@ RUN pip install -r requirements.txt
 RUN apt-get update && apt-get install ffmpeg libsm6 libxext6  -y
 
 # clone stable-diffusion-webui
-RUN git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui.git -b v1.5.0
+RUN git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui.git -b v1.5.1
 RUN mv /tmp/Stable-diffusion/*.safetensors /stable-diffusion-webui/models/Stable-diffusion
 RUN mv /tmp/VAE/*.safetensors /stable-diffusion-webui/models/VAE
 
