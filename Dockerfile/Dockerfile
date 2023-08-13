@@ -30,4 +30,4 @@ RUN git clone https://github.com/Mikubill/sd-webui-controlnet.git
 RUN mv /tmp/ControlNet/*.pth /stable-diffusion-webui/extensions/sd-webui-controlnet/models
 
 WORKDIR /stable-diffusion-webui
-RUN python launch.py --skip-torch-cuda-test --listen --enable-insecure-extension-access --exit
+RUN python launch.py --skip-torch-cuda-test --listen --xformers --enable-insecure-extension-access --exit

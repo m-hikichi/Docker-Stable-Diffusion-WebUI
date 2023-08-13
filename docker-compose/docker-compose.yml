@@ -15,7 +15,7 @@ services:
     tty: true
     ports:
       - "7860:7860"
-    entrypoint: sh -c "python launch.py --listen --enable-insecure-extension-access"
+    entrypoint: sh -c "python launch.py --listen --xformers --enable-insecure-extension-access"
 
     deploy:
       resources:
