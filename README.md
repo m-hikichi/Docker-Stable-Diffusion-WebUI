@@ -16,7 +16,6 @@
     │   ├── embeddings
     │   └── Lora
     ├── outputs
-    ├── .dockerignore
     ├── .gitignore
     └── README.md
     ```
@@ -45,10 +44,13 @@
     docker-compose logs -f
     ```
 
-2. Dockerコンテナのログにて`Running on local URL: ~`が表示されたことを確認後，ブラウザから`localhost:7860`にアクセスし，`Settings -> Stable Diffusion -> SD VAE`の項目で使用するVAEを変更します．その後，`Apply settings`を押して設定を反映します．<br>
-もし`localhost:7860`にアクセスできない場合は，Dockerコンテナが正常に動作しているか，または他のアプリケーションが`7860`ポートを使用していないか確認してください．
+2. Dockerコンテナのログにて`Running on local URL: ~`が表示されたことを確認後，ブラウザから[http://localhost:7860/](http://localhost:7860/)にアクセスしてください．もし[http://localhost:7860/](http://localhost:7860/)にアクセスできない場合は，Dockerコンテナが正常に動作しているか，または他のアプリケーションが`7860`ポートを使用していないか確認してください．
 
-3. stable-diffusion-webuiの基本的な使い方については，様々な方がWeb記事などで掲載されていますので，それを参考にしてください．
+3. `Settings -> VAE -> SD VAE`の項目で使用するVAEを変更します．このリポジトリのDockerfileをビルドした場合，`vae-ft-mse-840000-ema-pruned.safetensors`を選択してください．作成されるイラストが鮮やかになります．その後，`Apply settings`を押して設定を反映します．<br>
+
+4. `txt2img`タブを選択し，`Prompt`・`Negative prompt`・`Sampling method`などに適切なプロンプトや数値を設定し，`Generate`ボタンを押してください．イラストの生成が開始されます．適切なプロンプトや数値については，以下の`Abyss Orange Mix3 の使い方`を参照してください．
+
+5. その他のstable-diffusion-webuiの使い方については，様々な方がWeb記事などで掲載されていますので，それを参考にしてください．
 
 
 # Abyss Orange Mix3 の使い方
@@ -70,16 +72,18 @@
             `nsfw, (worst quality, low quality:1.4), (realistic, lip, nose, tooth, rouge, lipstick, eyeshadow:1.0), (dusty sunbeams:1.0), (abs, muscular, rib:1.0), (depth of field, bokeh, blurry:1.4),(motion lines, motion blur:1.4), (greyscale, monochrome:1.0), text, title, logo, signature`
         - v2<br>
             `nsfw, (worst quality, low quality:1.4), (lip, nose, tooth, rouge, lipstick, eyeshadow:1.4), (blush:1.2), (jpeg artifacts:1.4), (depth of field, bokeh, blurry, film grain, chromatic aberration, lens flare:1.0), (1boy, abs, muscular, rib:1.0), greyscale, monochrome, dusty sunbeams, trembling, motion lines, motion blur, emphasis lines, text, title, logo, signature`
-- Sampler : お好みで選んでください
+- Sampling method : お好みで選んでください
 - Steps :
-    - DPM++ SDE Karras: Test: 12～ ,illustration: 20～
-    - DPM++ 2M Karras: Test: 20～ ,illustration: 28～
+    |Sampling method|Sampling Steps|
+    |:--|:--|
+    |DPM++ SDE Karras|Test: 12～, illustration: 20～|
+    |DPM++ 2M Karras|Test: 20～, illustration: 28～|
 - Clipskip : 1 or 2
-- CFG : 8 (6～12)
+- CFG Scale : 8 (6～12)
 - Upscaler :
     - 詳細なイラスト :<br>
         - Latent (nearest-exact)
-        - Denoising strength : 0.5 (0.5~0.6)
+        - Denoising strength : 0.5 (0.5～0.6)
     - シンプルなアップスケール :<br>
         - Swin IR, ESRGAN, Remacri など…
-        - Denoising strength : 低く設定することも可能です (0.35~0.6)
+        - Denoising strength : 低く設定することも可能です (0.35～0.6)
