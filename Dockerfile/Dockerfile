@@ -31,3 +31,6 @@ RUN mv /tmp/ControlNet/*.pth /stable-diffusion-webui/extensions/sd-webui-control
 
 WORKDIR /stable-diffusion-webui
 RUN python launch.py --skip-torch-cuda-test --listen --xformers --enable-insecure-extension-access --exit
+COPY download_model.py .
+RUN rm -rf /root/.cache/huggingface/hub/models--openai--clip-vit-large-patch14/
+RUN python download_model.py
