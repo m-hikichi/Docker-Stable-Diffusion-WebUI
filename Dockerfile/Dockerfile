@@ -3,7 +3,7 @@ RUN apt-get update && apt-get install -y ffmpeg libsm6 libxext6
 
 # download Base-Model
 RUN mkdir -p /tmp/Stable-diffusion
-RUN wget -O /tmp/Stable-diffusion/Animagine_XL_V3.safetensors https://huggingface.co/cagliostrolab/animagine-xl-3.0/resolve/main/animagine-xl-3.0.safetensors
+RUN wget -O /tmp/Stable-diffusion/Animagine_XL_V3.1.safetensors https://huggingface.co/cagliostrolab/animagine-xl-3.1/resolve/main/animagine-xl-3.1.safetensors
 
 # # download VAE
 # RUN mkdir -p /tmp/VAE
