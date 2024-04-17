@@ -1,11 +1,11 @@
 version: '3'
 
 services:
-  dev:
+  stable-diffusion-webui:
     build:
       context: ../Dockerfile
       dockerfile: Dockerfile
-    image: stable-diffusion-webui:1.8.0
+    image: stable-diffusion-webui:1.9.0
     container_name: stable-diffusion-webui
     volumes:
       - ../models/embeddings:/stable-diffusion-webui/embeddings
