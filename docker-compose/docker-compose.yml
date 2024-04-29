@@ -10,7 +10,7 @@ services:
     volumes:
       - ../models/embeddings:/stable-diffusion-webui/embeddings
       - ../models/Lora:/stable-diffusion-webui/models/Lora
-      - ../output:/stable-diffusion-webui/output
+      - ../outputs:/stable-diffusion-webui/outputs
     working_dir: /stable-diffusion-webui
     tty: true
     ports:
