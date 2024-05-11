@@ -5,7 +5,7 @@ services:
     build:
       context: ../Dockerfile
       dockerfile: Dockerfile
-    image: stable-diffusion-webui:1.9.0
+    image: stable-diffusion-webui:1.9.0-sdxl
     container_name: stable-diffusion-webui
     volumes:
       - ../models/embeddings:/stable-diffusion-webui/embeddings
