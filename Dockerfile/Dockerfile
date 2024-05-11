@@ -19,7 +19,7 @@ COPY requirements.txt .
 RUN pip install -r requirements.txt
 
 # clone stable-diffusion-webui
-RUN git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui.git -b v1.8.0
+RUN git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui.git -b v1.9.0
 RUN mv /tmp/Stable-diffusion/*.safetensors /stable-diffusion-webui/models/Stable-diffusion
 # RUN mv /tmp/VAE/*.safetensors /stable-diffusion-webui/models/VAE
 RUN mv /tmp/VAE-approx/vaeapprox-sdxl.pt /stable-diffusion-webui/models/VAE-approx
