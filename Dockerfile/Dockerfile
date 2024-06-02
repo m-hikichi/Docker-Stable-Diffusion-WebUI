@@ -3,7 +3,7 @@ RUN apt-get update && apt-get install -y ffmpeg libsm6 libxext6
 
 # download Base-Model
 RUN mkdir -p /tmp/Stable-diffusion
-RUN wget -O /tmp/Stable-diffusion/ebara_pony_1.safetensors https://huggingface.co/tsukihara/xl_model/resolve/main/ebara_pony_1.bakedVAE.safetensors
+RUN wget -O /tmp/Stable-diffusion/ebara_pony_2.safetensors https://huggingface.co/tsukihara/xl_model/resolve/main/ebara_pony_2.safetensors
 
 # # download VAE
 # RUN mkdir -p /tmp/VAE
