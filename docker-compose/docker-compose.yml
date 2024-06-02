@@ -5,10 +5,9 @@ services:
     build:
       context: ../Dockerfile
       dockerfile: Dockerfile
-    image: stable-diffusion-webui:1.9.0-pony
+    image: stable-diffusion-webui:1.9.4-pony
     container_name: stable-diffusion-webui
     volumes:
-      - ../models/embeddings:/stable-diffusion-webui/embeddings
       - ../models/Lora:/stable-diffusion-webui/models/Lora
       - ../outputs:/stable-diffusion-webui/outputs
     working_dir: /stable-diffusion-webui
