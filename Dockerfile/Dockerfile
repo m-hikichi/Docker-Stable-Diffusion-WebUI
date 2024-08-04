@@ -15,11 +15,14 @@ COPY requirements.txt .
 RUN pip install -r requirements.txt
 
 # clone stable-diffusion-webui
-RUN git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui.git -b v1.9.4
+RUN git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui.git -b v1.10.0
 RUN mv /tmp/Stable-diffusion/*.safetensors /stable-diffusion-webui/models/Stable-diffusion
 RUN mv /tmp/VAE/*.safetensors /stable-diffusion-webui/models/VAE
 
 COPY download_model.py .
 RUN python download_model.py
 WORKDIR /stable-diffusion-webui
+
+# --skip-torch-cuda-test, --listen, --xformers : stable-diffusion-webui/modules/cmd_args.py
+# --exit : stable-diffusion-webui/modules/launch_utils.py
 RUN python launch.py --skip-torch-cuda-test --listen --xformers --exit
