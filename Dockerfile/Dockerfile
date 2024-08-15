@@ -11,6 +11,7 @@ RUN wget -O /tmp/Stable-diffusion/ebara_pony_2.safetensors https://huggingface.c
 
 # download VAE-approx for sdxl
 RUN mkdir -p /tmp/VAE-approx
+# https://github.com/AUTOMATIC1111/stable-diffusion-webui/releases/download/v1.0.0-pre/vaeapprox-sdxl.pt : stable-diffusion-webui/modules/sd_vae_approx.py
 RUN wget -P /tmp/VAE-approx https://github.com/AUTOMATIC1111/stable-diffusion-webui/releases/download/v1.0.0-pre/vaeapprox-sdxl.pt
 
 # install packages
@@ -19,7 +20,7 @@ COPY requirements.txt .
 RUN pip install -r requirements.txt
 
 # clone stable-diffusion-webui
-RUN git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui.git -b v1.9.4
+RUN git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui.git -b v1.10.0
 RUN mv /tmp/Stable-diffusion/*.safetensors /stable-diffusion-webui/models/Stable-diffusion
 # RUN mv /tmp/VAE/*.safetensors /stable-diffusion-webui/models/VAE
 RUN mv /tmp/VAE-approx/vaeapprox-sdxl.pt /stable-diffusion-webui/models/VAE-approx
@@ -27,4 +28,7 @@ RUN mv /tmp/VAE-approx/vaeapprox-sdxl.pt /stable-diffusion-webui/models/VAE-appr
 COPY download_model.py .
 RUN python download_model.py
 WORKDIR /stable-diffusion-webui
+
+# --skip-torch-cuda-test, --listen, --xformers : stable-diffusion-webui/modules/cmd_args.py
+# --exit : stable-diffusion-webui/modules/launch_utils.py
 RUN python launch.py --skip-torch-cuda-test --listen --xformers --exit
