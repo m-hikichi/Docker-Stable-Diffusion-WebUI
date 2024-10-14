@@ -3,7 +3,7 @@ RUN apt-get update && apt-get install -y ffmpeg libsm6 libxext6
 
 # download Base-Model
 RUN mkdir -p /tmp/Stable-diffusion
-RUN wget -O /tmp/Stable-diffusion/AOM3A1.safetensors https://huggingface.co/WarriorMama777/OrangeMixs/resolve/main/Models/AbyssOrangeMix3/AOM3A1_orangemixs.safetensors
+RUN wget -O /tmp/Stable-diffusion/VividOrangeMix.safetensors https://huggingface.co/WarriorMama777/OrangeMixs/resolve/main/Models/VividOrangeMix/VividOrangeMix.safetensors
 
 # download VAE
 RUN mkdir -p /tmp/VAE
