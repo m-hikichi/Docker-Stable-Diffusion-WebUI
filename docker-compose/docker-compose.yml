@@ -3,8 +3,8 @@ version: '3'
 services:
   stable-diffusion-webui:
     build:
-      context: ../Dockerfile
-      dockerfile: Dockerfile
+      context: ../.
+      dockerfile: Dockerfile/Dockerfile
     image: stable-diffusion-webui:v1.10.0-SD1.5-VividOrangeMix
     container_name: stable-diffusion-webui
     volumes:
