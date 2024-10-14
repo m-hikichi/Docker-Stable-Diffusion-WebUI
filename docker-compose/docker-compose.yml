@@ -3,9 +3,9 @@ version: '3'
 services:
   stable-diffusion-webui:
     build:
-      context: ../Dockerfile
-      dockerfile: Dockerfile
-    image: stable-diffusion-webui:1.10.0-pony
+      context: ../.
+      dockerfile: Dockerfile/Dockerfile
+    image: stable-diffusion-webui:v1.10.0-Pony-ebara_pony_v3
     container_name: stable-diffusion-webui
     volumes:
       - ../models/Lora:/stable-diffusion-webui/models/Lora
