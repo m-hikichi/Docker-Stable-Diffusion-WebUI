@@ -13,12 +13,14 @@
     │   ├── Dockerfile
     │   └── requirements.txt
     ├── models
+    │   ├── checkpoint
     │   ├── embeddings
     │   └── Lora
     ├── outputs
     ├── .gitignore
     └── README.md
     ```
+2. `models/checkpoint`ディレクトリに使用するモデルを配置します．
 
 ## Dockerイメージのビルド
 
@@ -87,3 +89,10 @@
     - シンプルなアップスケール :<br>
         - Swin IR, ESRGAN, Remacri など…
         - Denoising strength : 低く設定することも可能です (0.35～0.6)
+
+
+# Vivid Orange Mix について
+
+VividOrangeMixは，鮮やかでフラットなアニメ風のイラストを求めるファンのために作られたStableDiffusionモデルです．豊かで大胆な色使いとフラットな陰影で，アニメやマンガに見られるスタイルを体現しています．
+
+OrangeMixsのバージョンの一つであるAbyssOrangeMix1~3(AOM)は，フォトリアリスティックなモデルを融合させることで人体の解剖学的精度を向上させましたが，あまりにもリアルすぎる形状や影に不満を感じていました．VividOrangeMixは，この問題を解決するために調整されたモデルです．
