@@ -14,11 +14,13 @@
     │   ├── download_model.py
     │   └── requirements.txt
     ├── models
+    │   ├── checkpoint
     │   └── Lora
     ├── outputs
     ├── .gitignore
     └── README.md
     ```
+2. `models/checkpoint`ディレクトリに使用するモデルを配置します．
 
 ## Dockerイメージのビルド
 
