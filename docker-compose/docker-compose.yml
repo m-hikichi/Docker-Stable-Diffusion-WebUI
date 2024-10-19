@@ -3,12 +3,11 @@ version: '3'
 services:
   stable-diffusion-webui:
     build:
-      context: ../Dockerfile
-      dockerfile: Dockerfile
-    image: stable-diffusion-webui:1.10.0-sdxl
+      context: ../.
+      dockerfile: Dockerfile/Dockerfile
+    image: stable-diffusion-webui:v1.10.0-SDXL1.0-IllustriousXL_v0.1
     container_name: stable-diffusion-webui
     volumes:
-      - ../models/embeddings:/stable-diffusion-webui/embeddings
       - ../models/Lora:/stable-diffusion-webui/models/Lora
       - ../outputs:/stable-diffusion-webui/outputs
     working_dir: /stable-diffusion-webui
