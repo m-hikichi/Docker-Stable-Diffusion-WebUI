@@ -5,7 +5,7 @@ services:
     build:
       context: ../.
       dockerfile: Dockerfile/Dockerfile
-    image: stable-diffusion-webui:v1.10.0-SD1.5-VividOrangeMix
+    image: stable-diffusion-webui:v1.10.0-Illustrious-IllustriousXL_v0.1
     container_name: stable-diffusion-webui
     volumes:
       - ../models/Lora:/stable-diffusion-webui/models/Lora
